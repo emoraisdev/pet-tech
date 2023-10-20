@@ -19,15 +19,11 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column
     private String nome;
 
-    @Column
     private String descricao;
 
-    @Column
     private double preco;
 
-    @Column
     private String urlDaImagem;
 }

@@ -1,4 +1,4 @@
-package br.com.fiap.pettech.pettech.exception;
+package br.com.fiap.pettech.pettech.controller.exception;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

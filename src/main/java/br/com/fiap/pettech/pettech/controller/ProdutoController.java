@@ -1,5 +1,6 @@
 package br.com.fiap.pettech.pettech.controller;
 
+import br.com.fiap.pettech.pettech.dto.ProdutoDTO;
 import br.com.fiap.pettech.pettech.entity.Produto;
 import br.com.fiap.pettech.pettech.service.ProdutoService;
 import org.apache.coyote.Response;
@@ -22,14 +23,14 @@ public class ProdutoController {
 
 
     @GetMapping
-    public ResponseEntity<Collection<Produto>> findAll(){
+    public ResponseEntity<Collection<ProdutoDTO>> findAll(){
 
         var lista = service.findAll();
         return ResponseEntity.ok(lista);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Produto> findById(@PathVariable UUID id){
+    public ResponseEntity<ProdutoDTO> findById(@PathVariable UUID id){
 
         var produto = service.findById(id);
         return ResponseEntity.ok(produto);
@@ -37,17 +38,17 @@ public class ProdutoController {
 
 
     @PostMapping
-    public ResponseEntity<Produto> save(@RequestBody Produto produto){
+    public ResponseEntity<ProdutoDTO> save(@RequestBody ProdutoDTO produtoDTO){
 
-        produto = service.save(produto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(produto);
+        produtoDTO = service.save(produtoDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(produtoDTO);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Produto> update(@PathVariable UUID id, @RequestBody Produto produto){
+    public ResponseEntity<ProdutoDTO> update(@PathVariable UUID id, @RequestBody ProdutoDTO produtoDTO){
 
-        produto = service.update(id, produto);
-        return ResponseEntity.ok(produto);
+        produtoDTO = service.update(id, produtoDTO);
+        return ResponseEntity.ok(produtoDTO);
     }
 
     @DeleteMapping("/{id}")

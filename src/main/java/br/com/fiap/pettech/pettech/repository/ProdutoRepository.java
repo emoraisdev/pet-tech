@@ -1,4 +1,4 @@
-package br.com.fiap.pettech.pettech.data;
+package br.com.fiap.pettech.pettech.repository;
 
 import br.com.fiap.pettech.pettech.entity.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
